@@ -1,11 +1,11 @@
 <script>
-import SingleProject from "./SingleProject.vue";
+import ProjectCard from "./ProjectCard.vue";
 
 export default {
   name: "MainProjectsContainer",
 
   components: {
-    SingleProject,
+    ProjectCard,
   },
 
   props: {
@@ -16,7 +16,7 @@ export default {
 
 <template>
   <section class="my_projects-container container">
-    <SingleProject
+    <ProjectCard
       v-for="project in projects"
       :projectDescription="project.description"
       :projectTitle="project.title"
