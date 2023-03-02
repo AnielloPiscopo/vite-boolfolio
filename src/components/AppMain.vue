@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/projects",
-      currentPage: 10,
+      currentPage: 1,
       projectsList: [],
     };
   },
