@@ -6,4 +6,4 @@
 export default {};
 </script>
 
-<style lang="scsss" scoped></style>
+<style lang="scss" scoped></style>
