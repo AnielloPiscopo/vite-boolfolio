@@ -40,7 +40,7 @@ export default {
 
 <template>
   <main>
-    <ProjectsContainer />
+    <ProjectsContainer :projectsList="projectsList" />
   </main>
 </template>
 
