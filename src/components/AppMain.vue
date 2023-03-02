@@ -1,10 +1,13 @@
 <script>
 import axios from "axios";
+import ProjectsContainer from "./main/ProjectsContainer.vue";
 
 export default {
   name: "AppMain",
 
-  components: {},
+  components: {
+    ProjectsContainer,
+  },
 
   data() {
     return {
@@ -36,7 +39,9 @@ export default {
 </script>
 
 <template>
-  <main></main>
+  <main>
+    <ProjectsContainer />
+  </main>
 </template>
 
 <style lang="scss" scoped></style>
