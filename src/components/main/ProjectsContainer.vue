@@ -1,18 +1,29 @@
 <script>
+import SingleProject from "./SingleProject.vue";
+
 export default {
   name: "MainProjectsContainer",
 
+  components: {
+    SingleProject,
+  },
+
   props: {
-    projectsList: Array,
+    projects: Array,
   },
 };
 </script>
 
 <template>
   <section class="my_projects-container container">
-    <article v-for="project in projectsList">
-      <div>{{ project }}</div>
-    </article>
+    <SingleProject
+      v-for="project in projects"
+      :projectDescription="project.description"
+      :projectTitle="project.title"
+      :projectTechnologies="project.technologies"
+      :projectType="project.type"
+      :projectImgPath="project.img_path"
+    />
   </section>
 </template>
 

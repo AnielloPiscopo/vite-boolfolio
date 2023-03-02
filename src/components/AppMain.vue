@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/projects",
-      apiCurrentPage: 1,
+      currentPage: 10,
       projectsList: [],
     };
   },
@@ -22,7 +22,7 @@ export default {
       axios
         .get(this.apiUrl, {
           params: {
-            page: 1,
+            page: this.currentPage,
           },
         })
         .then((response) => {
@@ -40,7 +40,7 @@ export default {
 
 <template>
   <main>
-    <ProjectsContainer :projectsList="projectsList" />
+    <ProjectsContainer :projects="projectsList" />
   </main>
 </template>
 
