@@ -15,15 +15,24 @@ export default {
 </script>
 
 <template>
-  <section class="my_projects-container container">
-    <ProjectCard
-      v-for="project in projects"
-      :projectDescription="project.description"
-      :projectTitle="project.title"
-      :projectTechnologies="project.technologies"
-      :projectType="project.type"
-      :projectImgPath="project.img_path"
-    />
+  <section id="projects-list" class="container p-5">
+    <div class="my_projects-container container p-5">
+      <div class="row justify-content-center">
+        <ProjectCard
+          v-for="project in projects"
+          :projectDescription="project.description"
+          :projectTitle="project.title"
+          :projectTechnologies="project.technologies"
+          :projectType="project.type"
+          :projectImgPath="project.img_path"
+        />
+      </div>
+    </div>
+
+    <div class="my_btns-container d-flex justify-content-around pt-4">
+      <a href="#" class="my_btn btn btn-primary" @click="$emit('prev')">Prev</a>
+      <a href="#" class="my_btn btn btn-primary" @click="$emit('next')">Next</a>
+    </div>
   </section>
 </template>
 

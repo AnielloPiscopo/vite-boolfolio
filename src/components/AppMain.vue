@@ -12,8 +12,9 @@ export default {
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/projects",
-      currentPage: 1,
       projectsList: [],
+      currentPage: 1,
+      numOfPages: 10,
     };
   },
 
@@ -26,9 +27,21 @@ export default {
           },
         })
         .then((response) => {
+          console.log(response.data.results);
           this.projectsList = response.data.results.data;
-          console.log(this.projectsList);
         });
+    },
+
+    previousPage() {
+      this.currentPage =
+        this.currentPage <= 1 ? this.numOfPages : this.currentPage - 1;
+      this.getProjectsInfo();
+    },
+
+    nextPage() {
+      this.currentPage =
+        this.currentPage >= this.numOfPages ? 1 : this.currentPage + 1;
+      this.getProjectsInfo();
     },
   },
 
@@ -39,8 +52,12 @@ export default {
 </script>
 
 <template>
-  <main>
-    <ProjectsContainer :projects="projectsList" />
+  <main class="p-5">
+    <ProjectsContainer
+      :projects="projectsList"
+      @prev="previousPage()"
+      @next="nextPage()"
+    />
   </main>
 </template>
 
