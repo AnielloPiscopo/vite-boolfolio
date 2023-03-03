@@ -36,14 +36,7 @@ export default {
 </script>
 
 <template>
-  <ProjectCard
-    :projectDescription="project.description"
-    :projectTitle="project.title"
-    :projectTechnologies="project.technologies"
-    :projectType="project.type"
-    :projectImgPath="project.img_path"
-    :projectSlug="project.slug"
-  />
+  <ProjectCard :project="project" :isShow="true" />
 </template>
 
 <style lang="scss"></style>

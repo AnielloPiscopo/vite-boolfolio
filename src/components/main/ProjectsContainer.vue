@@ -21,12 +21,7 @@ export default {
         <ProjectCard
           class="col-2 mb-5 mx-3"
           v-for="project in projects"
-          :projectDescription="project.description"
-          :projectTitle="project.title"
-          :projectTechnologies="project.technologies"
-          :projectType="project.type"
-          :projectImgPath="project.img_path"
-          :projectSlug="project.slug"
+          :project="project"
         />
       </div>
     </div>

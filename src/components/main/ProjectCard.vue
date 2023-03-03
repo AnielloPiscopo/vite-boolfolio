@@ -3,23 +3,37 @@ export default {
   name: "MainProjectCard",
 
   props: {
-    projectDescription: String,
-    projectTitle: String,
-    projectImgPath: String,
-    projectSlug: String,
+    project: {
+      type: Object,
+      required: true,
+    },
+
+    isShow: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 };
 </script>
 
 <template>
   <article class="card">
-    <img class="card-img-top" :src="projectImgPath" alt="Card image cap" />
+    <img class="card-img-top" :src="project.img_path" :alt="project.img_path" />
     <div class="card-body">
-      <h5 class="card-title">{{ projectTitle }}</h5>
-      <p class="card-text">{{ projectDescription.substr(0, 100) }}...</p>
+      <h5 class="card-title">{{ project.title }}</h5>
+      <p class="card-text">
+        {{
+          isShow
+            ? project.description
+            : project.description.substr(0, 100) + "..."
+        }}
+      </p>
       <router-link
-        :to="{ name: 'project', params: { slug: projectSlug } }"
+        v-if="!isShow"
+        :to="{ name: 'project', params: { slug: project.slug } }"
         clroute-linkss="btn btn-primary"
+        title="Vedi il post completo"
         >View More</router-link
       >
     </div>

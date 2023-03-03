@@ -17,9 +17,14 @@ export default {
   <nav>
     <ul>
       <li>
-        <router-link v-for="navLink in navLinks" :to="{ name: navLink }">{{
-          store.upperCaseTheFirstLetter(navLink)
-        }}</router-link>
+        <router-link
+          v-for="navLink in navLinks"
+          :to="{ name: navLink }"
+          :title="
+            'Raggiungi la sezione ' + store.upperCaseTheFirstLetter(navLink)
+          "
+          >{{ store.upperCaseTheFirstLetter(navLink) }}</router-link
+        >
       </li>
     </ul>
   </nav>
