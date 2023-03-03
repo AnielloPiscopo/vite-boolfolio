@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <article class="card col-2 mb-5 mx-3">
+  <article class="card">
     <img class="card-img-top" :src="projectImgPath" alt="Card image cap" />
     <div class="card-body">
       <h5 class="card-title">{{ projectTitle }}</h5>
