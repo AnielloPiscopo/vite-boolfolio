@@ -1,9 +1,12 @@
 <script>
+import { store } from "../../store";
+
 export default {
   name: "HeaderNavBar",
 
   data() {
     return {
+      store,
       navLinks: ["home", "projects"],
     };
   },
@@ -15,7 +18,7 @@ export default {
     <ul>
       <li>
         <router-link v-for="navLink in navLinks" :to="{ name: navLink }">{{
-          navLink.toLocaleUpperCase()
+          store.upperCaseTheFirstLetter(navLink)
         }}</router-link>
       </li>
     </ul>
