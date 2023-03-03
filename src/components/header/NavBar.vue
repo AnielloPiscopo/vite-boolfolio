@@ -1,6 +1,12 @@
 <script>
 export default {
   name: "HeaderNavBar",
+
+  data() {
+    return {
+      navLinks: ["home", "projects"],
+    };
+  },
 };
 </script>
 
@@ -8,8 +14,9 @@ export default {
   <nav>
     <ul>
       <li>
-        <router-link :to="{ name: 'home' }">Home</router-link>
-        <router-link :to="{ name: 'projects' }">Projects</router-link>
+        <router-link v-for="navLink in navLinks" :to="{ name: navLink }">{{
+          navLink.toLocaleUpperCase()
+        }}</router-link>
       </li>
     </ul>
   </nav>
