@@ -1,6 +1,6 @@
 <script>
 import axios from "axios";
-import ProjectCard from "../../components/main/ProjectCard.vue";
+import ProjectCard from "../components/main/ProjectCard.vue";
 
 export default {
   name: "SingleProjectPage",

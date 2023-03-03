@@ -1,6 +1,6 @@
 <script>
 import axios from "axios";
-import ProjectsContainer from "../../components/main/ProjectsContainer.vue";
+import ProjectsContainer from "../components/main/ProjectsContainer.vue";
 
 export default {
   name: "ProjectsPage",
