@@ -25,6 +25,7 @@ export default {
           :projectTechnologies="project.technologies"
           :projectType="project.type"
           :projectImgPath="project.img_path"
+          :projectSlug="project.slug"
         />
       </div>
     </div>

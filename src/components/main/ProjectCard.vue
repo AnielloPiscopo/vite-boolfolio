@@ -6,6 +6,7 @@ export default {
     projectDescription: String,
     projectTitle: String,
     projectImgPath: String,
+    projectSlug: String,
   },
 };
 </script>
@@ -16,7 +17,11 @@ export default {
     <div class="card-body">
       <h5 class="card-title">{{ projectTitle }}</h5>
       <p class="card-text">{{ projectDescription.substr(0, 100) }}...</p>
-      <a href="#" class="btn btn-primary">View More</a>
+      <router-link
+        :to="{ name: 'project', params: { slug: projectSlug } }"
+        clroute-linkss="btn btn-primary"
+        >View More</router-link
+      >
     </div>
   </article>
 </template>

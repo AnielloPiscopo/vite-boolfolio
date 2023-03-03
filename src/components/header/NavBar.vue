@@ -8,8 +8,8 @@ export default {
   <nav>
     <ul>
       <li>
-        <a>Home</a>
-        <a>Projects</a>
+        <router-link :to="{ name: 'home' }">Home</router-link>
+        <router-link :to="{ name: 'projects' }">Projects</router-link>
       </li>
     </ul>
   </nav>
