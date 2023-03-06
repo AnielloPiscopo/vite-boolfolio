@@ -1,6 +1,7 @@
 <script>
+import { store } from "../store";
 import axios from "axios";
-import ProjectCard from "../components/main/ProjectCard.vue";
+import ProjectCard from "../components/main/projects/ProjectCard.vue";
 
 export default {
   name: "SingleProjectPage",
@@ -11,7 +12,7 @@ export default {
 
   data() {
     return {
-      apiUrl: "http://127.0.0.1:8000/api/projects",
+      store,
       project: null,
     };
   },
@@ -19,8 +20,10 @@ export default {
   methods: {
     getProjectInfo() {
       axios
-        .get(this.apiUrl + `/${this.$route.params.slug}`, {
-          params: {},
+        .get(this.store.apiUrl + `/${this.$route.params.slug}`, {
+          params: {
+            api_token: this.store.apiToken,
+          },
         })
         .then((response) => {
           console.log(response.data.results);
@@ -36,7 +39,9 @@ export default {
 </script>
 
 <template>
-  <ProjectCard :project="project" :isShow="true" />
+  <section id="single-project">
+    <ProjectCard :project="project" :isShow="true" />
+  </section>
 </template>
 
 <style lang="scss"></style>

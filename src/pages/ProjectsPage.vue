@@ -1,32 +1,33 @@
 <script>
+import { store } from "../store";
 import axios from "axios";
-import ProjectsContainer from "../components/main/ProjectsContainer.vue";
+import ProjectsContainer from "../components/main/projects/ProjectsContainer.vue";
+import ProjectsBtnsContainer from "../components/main/projects/BtnsContainer.vue";
 
 export default {
   name: "ProjectsPage",
 
   components: {
     ProjectsContainer,
+    ProjectsBtnsContainer,
   },
 
   data() {
     return {
-      apiUrl: "http://127.0.0.1:8000/api/projects",
+      store,
       projectsList: [],
       currentPage: 1,
       numOfPages: 10,
-      apiToken:
-        "LH8F6e4dED317Q6WrQVEPiTdk9kmfqjkbxOTazPP2BMSUjU1fl5ZkX3Ed9mQuoY5OUHIGYqcGzaREo0hLVJHymWtkhGauF5JCxu3",
     };
   },
 
   methods: {
     getProjectsInfo() {
       axios
-        .get(this.apiUrl, {
+        .get(this.store.apiUrl, {
           params: {
             page: this.currentPage,
-            api_token: this.apiToken,
+            api_token: this.store.apiToken,
           },
         })
         .then((response) => {
@@ -55,11 +56,10 @@ export default {
 </script>
 
 <template>
-  <ProjectsContainer
-    :projects="projectsList"
-    @prev="previousPage()"
-    @next="nextPage()"
-  />
+  <section id="projects" class="container p-5">
+    <ProjectsContainer :projects="projectsList" />
+    <ProjectsBtnsContainer @prev="previousPage()" @next="nextPage()" />
+  </section>
 </template>
 
 <style lang="scss"></style>

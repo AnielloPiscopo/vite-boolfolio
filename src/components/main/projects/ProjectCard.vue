@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "MainProjectCard",
+  name: "ProjectCard",
 
   props: {
     project: {
