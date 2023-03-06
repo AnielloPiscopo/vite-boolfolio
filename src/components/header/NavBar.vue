@@ -7,7 +7,14 @@ export default {
   data() {
     return {
       store,
-      navLinks: ["home", "projects"],
+      navLinks: [
+        "home",
+        "profile",
+        "skills",
+        "projects",
+        "experiences",
+        "contact",
+      ],
     };
   },
 };
