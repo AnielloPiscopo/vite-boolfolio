@@ -4,6 +4,18 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <section id="home">
+    <div class="container-fluid">
+      <h1 class="my_title">Aniello Piscopo</h1>
+      <div class="my_subtitle">
+        <em><span>Boolean</span>Development Student</em>
+      </div>
+      <div class="my_btns-container">
+        <router-link :to="{ name: 'profile' }">Scopri di più</router-link>
+      </div>
+    </div>
+  </section>
+</template>
 
 <style lang="scss"></style>
