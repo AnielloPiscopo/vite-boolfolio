@@ -15,6 +15,8 @@ export default {
       projectsList: [],
       currentPage: 1,
       numOfPages: 10,
+      apiToken:
+        "LH8F6e4dED317Q6WrQVEPiTdk9kmfqjkbxOTazPP2BMSUjU1fl5ZkX3Ed9mQuoY5OUHIGYqcGzaREo0hLVJHymWtkhGauF5JCxu3",
     };
   },
 
@@ -24,6 +26,7 @@ export default {
         .get(this.apiUrl, {
           params: {
             page: this.currentPage,
+            api_token: this.apiToken,
           },
         })
         .then((response) => {
