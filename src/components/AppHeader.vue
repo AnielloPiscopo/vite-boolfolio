@@ -1,10 +1,12 @@
 <script>
+import LogoContainer from "./header/LogoContainer.vue";
 import NavBar from "./header/NavBar.vue";
 
 export default {
   name: "AppHeader",
 
   components: {
+    LogoContainer,
     NavBar,
   },
 };
@@ -12,6 +14,7 @@ export default {
 
 <template>
   <header>
+    <LogoContainer />
     <NavBar />
   </header>
 </template>

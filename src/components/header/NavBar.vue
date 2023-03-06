@@ -8,12 +8,35 @@ export default {
     return {
       store,
       navLinks: [
-        "home",
-        "profile",
-        "skills",
-        "projects",
-        "experiences",
-        "contact",
+        {
+          name: "home",
+          icon: ["fas", "fa-home"],
+        },
+
+        {
+          name: "profile",
+          icon: ["far", "fa-user"],
+        },
+
+        {
+          name: "skills",
+          icon: ["far", "fa-file-alt"],
+        },
+
+        {
+          name: "projects",
+          icon: ["far", "fa-file-image"],
+        },
+
+        {
+          name: "experiences",
+          icon: ["fas", "fa-briefcase"],
+        },
+
+        {
+          name: "contact",
+          icon: ["far", "fa-paper-plane"],
+        },
       ],
     };
   },
@@ -26,12 +49,15 @@ export default {
       <li>
         <router-link
           v-for="navLink in navLinks"
-          :to="{ name: navLink }"
+          :to="{ name: navLink.name }"
           :title="
-            'Raggiungi la sezione ' + store.upperCaseTheFirstLetter(navLink)
+            'Raggiungi la sezione ' +
+            store.upperCaseTheFirstLetter(navLink.name)
           "
-          >{{ store.upperCaseTheFirstLetter(navLink) }}</router-link
         >
+          <font-awesome-icon :icon="navLink.icon" />
+          <span>{{ store.upperCaseTheFirstLetter(navLink.name) }}</span>
+        </router-link>
       </li>
     </ul>
   </nav>
