@@ -1,11 +1,11 @@
 <script>
-import PagesTitle from "../components/main/PagesHeader.vue";
+import SectionsHeader from "../components/main/SectionsHeader.vue";
 
 export default {
   name: "ContactPage",
 
   components: {
-    PagesTitle,
+    SectionsHeader,
   },
 
   data() {
@@ -20,7 +20,7 @@ export default {
 
 <template>
   <section id="contact">
-    <PagesTitle
+    <SectionsHeader
       :pageTitle="title"
       :pageSubtitle="subtitle"
       :specialWords="specialWords"

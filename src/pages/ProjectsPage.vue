@@ -1,7 +1,7 @@
 <script>
 import { store } from "../store";
 import axios from "axios";
-import PagesTitle from "../components/main/PagesHeader.vue";
+import SectionsHeader from "../components/main/SectionsHeader.vue";
 import ProjectsContainer from "../components/main/projects/ProjectsContainer.vue";
 import ProjectsBtnsContainer from "../components/main/projects/BtnsContainer.vue";
 
@@ -9,7 +9,7 @@ export default {
   name: "ProjectsPage",
 
   components: {
-    PagesTitle,
+    SectionsHeader,
     ProjectsContainer,
     ProjectsBtnsContainer,
   },
@@ -60,7 +60,7 @@ export default {
 
 <template>
   <section id="projects" class="container p-5">
-    <PagesTitle :pageTitle="title" />
+    <SectionsHeader :pageTitle="title" />
     <ProjectsContainer :projects="projectsList" />
     <ProjectsBtnsContainer @prev="previousPage()" @next="nextPage()" />
   </section>

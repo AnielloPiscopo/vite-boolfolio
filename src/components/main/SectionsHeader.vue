@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "PagesTitle",
+  name: "SectionsHeader",
 
   props: {
     pageTitle: {
