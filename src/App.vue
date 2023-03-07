@@ -11,13 +11,13 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader v-if="this.$route.name != 'home'" />
 
   <main>
     <router-view></router-view>
   </main>
 
-  <AppFooter />
+  <AppFooter v-if="this.$route.name != 'home'" />
 </template>
 
 <style lang="scss">
