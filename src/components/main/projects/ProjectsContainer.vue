@@ -9,7 +9,10 @@ export default {
   },
 
   props: {
-    projects: Array,
+    projects: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>
