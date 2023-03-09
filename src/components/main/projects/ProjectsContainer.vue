@@ -22,8 +22,9 @@ export default {
     <div class="row justify-content-center">
       <ProjectCard
         class="col-2 mb-5 mx-3"
-        v-for="project in projects"
+        v-for="(project, index) in projects"
         :project="project"
+        :key="index"
       />
     </div>
   </div>

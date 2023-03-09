@@ -4,7 +4,7 @@ export const store = reactive({
   apiUrl: "http://127.0.0.1:8000/api/projects",
 
   apiToken:
-    "rUP2SKAw6OdXkU8hkm3nhiTilBcAzk0Vxd8qZBHyPD25ECh3qzU1KAYWCNpkdpaHphWZR2kxtmsGTnivHq8zJcnYORZA4C8tUhJN",
+    "miZWgF23y9KTySPWshzFWH0RZbxqbVBylab9KCwfrZsuYehlXGPG4CY1Nm63h2nM2TvPysQQQRJRZviqd42PEGL1UFZ3dtAyCWDq",
 
   getImgPath(imgPath) {
     return new URL("./assets/img/" + imgPath + ".png", import.meta.url).href;

@@ -25,7 +25,7 @@ export default {
 <template>
   <div class="my_cards-container">
     <SingleCard
-      v-for="obj in objsList"
+      v-for="obj,index in objsList" :key="index"
       :cardInfos="obj"
       :cardClass="cardClass"
     />
