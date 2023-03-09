@@ -9,7 +9,7 @@ export default {
   },
 
   props: {
-    objsList: {
+    cardsInfos: {
       type: Array,
       required: false,
     },
@@ -25,8 +25,9 @@ export default {
 <template>
   <div class="my_cards-container">
     <SingleCard
-      v-for="obj,index in objsList" :key="index"
-      :cardInfos="obj"
+      v-for="(cardInfos, index) in cardsInfos"
+      :key="index"
+      :cardInfos="cardInfos"
       :cardClass="cardClass"
     />
   </div>

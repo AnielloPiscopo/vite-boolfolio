@@ -44,7 +44,7 @@ export default {
 
     <div class="my_body">
       <CardsContainer
-        :objsList="contactInfos"
+        :cardsInfos="contactInfos"
         :cardClass="contactElementsClass"
       />
     </div>
