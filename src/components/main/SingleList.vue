@@ -4,7 +4,6 @@ export default {
 
   props: {
     listInfos: {
-      type: Object,
       required: false,
     },
 
@@ -17,10 +16,17 @@ export default {
 </script>
 
 <template>
-  <h3>{{ listInfos.name }}</h3>
-  <ul :class="listClass">
+  <h3 v-if="listInfos.name">{{ listInfos.name }}</h3>
+  <ul :class="listClass" v-if="listInfos.content">
     <li v-for="(listEl, index) in listInfos.content" :key="index">
       {{ listEl.name }}
+    </li>
+  </ul>
+
+  <ul v-else>
+    <li v-for="(listEl, index) in listInfos">
+      <span>{{ listEl.name }}:</span>
+      <span>{{ listEl.value }}</span>
     </li>
   </ul>
 </template>
