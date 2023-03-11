@@ -21,13 +21,14 @@ export default {
       projectsList: [],
       currentPage: 1,
       numOfPages: 10,
+      apiUrlSpecificSection: "projects",
     };
   },
 
   methods: {
     getProjectsInfo() {
       axios
-        .get(this.store.apiUrl, {
+        .get(this.store.apiUrl + this.apiUrlSpecificSection, {
           params: {
             page: this.currentPage,
             api_token: this.store.apiToken,
@@ -60,7 +61,7 @@ export default {
 
 <template>
   <section id="projects" class="container p-5">
-    <SectionsHeader :pageTitle="title" />
+    <SectionsHeader :title="title" />
     <ProjectsContainer :projects="projectsList" />
     <ProjectsBtnsContainer @prev="previousPage()" @next="nextPage()" />
   </section>
