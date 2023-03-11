@@ -1,10 +1,10 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-  apiUrl: "http://127.0.0.1:8000/api/projects",
+  apiUrl: "http://127.0.0.1:8000/api/",
 
   apiToken:
-    "miZWgF23y9KTySPWshzFWH0RZbxqbVBylab9KCwfrZsuYehlXGPG4CY1Nm63h2nM2TvPysQQQRJRZviqd42PEGL1UFZ3dtAyCWDq",
+    "CxOTGZtq90QwoeM2YwUtzla6aexoGBgKKk8NLalCDkx99hKPhyjMkYtOWnphDd4MxRljbLkrHtxeLrilrZYg2rX5QLiLoqAOC69z",
 
   getImgPath(imgPath) {
     return new URL("./assets/img/" + imgPath + ".png", import.meta.url).href;
