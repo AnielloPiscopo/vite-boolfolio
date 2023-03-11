@@ -18,7 +18,7 @@ export default {
       title: "Skills",
       subtitle: "Abilità , Lingue e altro",
       specialWords: ["Abilità", "Lingue"],
-      skillsClass: "my_skills-list",
+      skillsElementsClass: "my_skills-el",
       skillsList: [],
       apiUrlSpecificSection: "skills",
     };
@@ -46,17 +46,15 @@ export default {
 </script>
 
 <template>
-  <SectionsHeader
-    :title="title"
-    :subtitle="subtitle"
-    :specialWords="specialWords"
-  />
+  <section id="skills" v-if="skillsList != 0">
+    <SectionsHeader
+      :title="title"
+      :subtitle="subtitle"
+      :specialWords="specialWords"
+    />
 
-  <ListsContainer
-    v-if="skillsList"
-    :listsInfos="skillsList"
-    :listClass="skillsClass"
-  />
+    <ListsContainer :listsInfos="skillsList" :listClass="skillsElementsClass" />
+  </section>
 </template>
 
 <style lang="scss"></style>
