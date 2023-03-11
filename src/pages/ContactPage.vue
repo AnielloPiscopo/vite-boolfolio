@@ -1,4 +1,5 @@
 <script>
+import { store } from "../store";
 import SectionsHeader from "../components/main/SectionsHeader.vue";
 import CardsContainer from "../components/main/CardsContainer.vue";
 
@@ -12,6 +13,7 @@ export default {
 
   data() {
     return {
+      store,
       title: "Area Contatti",
       subtitle: `Rimaniamo in contatto`,
       specialWords: ["contatto"],
@@ -26,7 +28,7 @@ export default {
         {
           mainIcon: ["fas", "fa-envelope-square"],
           name: "La mia email",
-          detail: "aniello.piscopo0707@gmail.com",
+          detail: store.personalEmail,
         },
       ],
     };

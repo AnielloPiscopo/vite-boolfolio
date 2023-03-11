@@ -6,6 +6,8 @@ export const store = reactive({
   apiToken:
     "CxOTGZtq90QwoeM2YwUtzla6aexoGBgKKk8NLalCDkx99hKPhyjMkYtOWnphDd4MxRljbLkrHtxeLrilrZYg2rX5QLiLoqAOC69z",
 
+  personalEmail: "aniello.piscopo03@gmail.com",
+
   getImgPath(imgPath) {
     return new URL("./assets/img/" + imgPath + ".png", import.meta.url).href;
   },
