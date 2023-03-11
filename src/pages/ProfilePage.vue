@@ -20,8 +20,8 @@ export default {
 
 <template>
   <SectionsHeader
-    :pageTitle="title"
-    :pageSubtitle="subtitle"
+    :title="title"
+    :subtitle="subtitle"
     :specialWords="specialWords"
   />
 </template>

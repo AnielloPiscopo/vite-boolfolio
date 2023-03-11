@@ -3,12 +3,12 @@ export default {
   name: "SectionsHeader",
 
   props: {
-    pageTitle: {
+    title: {
       type: String,
       required: true,
     },
 
-    pageSubtitle: {
+    subtitle: {
       type: String,
       required: false,
     },
@@ -23,8 +23,8 @@ export default {
 
 <template>
   <div class="my_header">
-    <h2 class="my_title text-uppercase">{{ pageTitle }}</h2>
-    <div class="my_subtitle">{{ pageSubtitle }}</div>
+    <h2 class="my_title text-uppercase">{{ title }}</h2>
+    <div class="my_subtitle text-uppercase">{{ subtitle }}</div>
   </div>
 </template>
 

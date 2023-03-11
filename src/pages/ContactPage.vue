@@ -37,8 +37,8 @@ export default {
 <template>
   <section id="contact">
     <SectionsHeader
-      :pageTitle="title"
-      :pageSubtitle="subtitle"
+      :title="title"
+      :subtitle="subtitle"
       :specialWords="specialWords"
     />
 
