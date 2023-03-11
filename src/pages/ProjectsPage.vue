@@ -60,7 +60,7 @@ export default {
 </script>
 
 <template>
-  <section id="projects" class="container p-5">
+  <section id="projects" class="container p-5" v-if="projectsList.length != 0">
     <SectionsHeader :title="title" />
     <ProjectsContainer :projects="projectsList" />
     <ProjectsBtnsContainer @prev="previousPage()" @next="nextPage()" />
